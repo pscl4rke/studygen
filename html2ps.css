@@ -1,0 +1,25 @@
+
+
+@PAGE {
+    /* These are the only margin settings obeyed */
+    /* And they are not obeyed properly */
+    margin-top: 2cm;
+    margin-left: 7cm;
+    margin-bottom: 4cm;
+    margin-right: 7cm;
+}
+
+H1 {
+    font-size: 14pt;
+    text-align: center;
+    margin-top: 6em;
+    margin-bottom: 6em;
+}
+
+P {
+    /* line-height: 200%;  (doesn't work) */
+    line-height: 2.8em;
+    font-size: 10pt;
+}
+
+
