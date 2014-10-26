@@ -9,7 +9,7 @@ passage.ps: passage.html html2ps.css
 	cat passage.html | html2ps -f html2ps.css > $@
 
 passage.html: head.html passage.body foot.html
-	cat $^ | sed "s/TITLE/$(REF)/" > $@
+	cat $^ | sed "s/TITLE/$(REF)/" | ./cleanup > $@
 
 passage.body: references.txt
 	diatheke -b NIV -f html -k "$(REF)" | grep -v '(NIV)' > $@
