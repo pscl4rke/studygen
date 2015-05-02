@@ -14,4 +14,9 @@ passage.html: head.html passage.body foot.html
 passage.body: references.txt
 	diatheke -b NIV -f html -k "$(REF)" | grep -v '(NIV)' > $@
 
+# --- Other stuff
+
+hardcopy: passage.pdf
+	lp $^
+
 
