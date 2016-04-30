@@ -11,7 +11,7 @@ passage.ps: passage.html html2ps.css
 passage.html: head.html passage.body foot.html
 	cat $^ | sed "s/TITLE/$(REF)/" | ./cleanup > $@
 
-passage.body: references.txt
+passage.body: references.txt Makefile
 	diatheke -b NIV -f html -k "$(REF)" | grep -v '(NIV)' > $@
 
 # --- Other stuff
