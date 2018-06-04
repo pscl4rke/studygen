@@ -13,7 +13,7 @@ passage.html: head.html passage.body foot.html
 	cat $^ | sed "s/TITLE/$(REF)/" | ./cleanup > $@
 
 passage.body: references.txt Makefile
-	diatheke -b NIV -f html -k "$(REF)" | grep -v '(NIV)' > $@
+	diatheke -b NIV -f html -k "$(REF)" | grep -v '(NIV)' | grep -v '^: ' > $@
 
 # --- Other stuff
 
