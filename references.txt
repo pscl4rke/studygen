@@ -10,3 +10,4 @@ Psalm 84
 Psalm 87
 Matthew 11:16-24
 Luke 15
+Philippians 4:1-9
