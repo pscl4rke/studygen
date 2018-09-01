@@ -3,4 +3,7 @@
 import sys
 
 for line in sys.stdin:
-    sys.stdout.write(line.replace("LORD", "L<small>ORD</small>"))
+    sys.stdout.write(line
+        .replace("LORD", "L<small>ORD</small>")
+        .replace("<span >: ", "<span>")  # fix double colon from diatheke
+    )
