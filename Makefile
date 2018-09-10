@@ -2,6 +2,11 @@
 
 REF := $(shell tail -1 references.txt)
 
+stats: passage.pdf
+	@echo
+	pdfinfo $^ | grep -i pages | cat
+	@echo
+
 passage.pdf: passage.ps
 	ps2pdf $^ $@
 
@@ -18,6 +23,6 @@ passage.body: references.txt Makefile
 # --- Other stuff
 
 hardcopy: passage.pdf
-	lp $^
+	lp -dHL1110 $^
 
 
