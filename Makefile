@@ -1,4 +1,6 @@
 
+# Testing...
+SHELL := /bin/bash
 
 REF := $(shell tail -1 references.txt)
 
