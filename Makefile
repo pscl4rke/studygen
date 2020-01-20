@@ -20,8 +20,11 @@ passage.ps: passage.html html2ps.css
 passage.html: head.html passage.body foot.html
 	cat $^ | sed "s/TITLE/$(REF)/" | ./cleanup > $@
 
-passage.body: references.txt Makefile
-	diatheke -b $(TRANS) -f html -k "$(REF)" | grep -v '($(TRANS))' | grep -v '^: ' > $@
+passage.body: passage.dia
+	cat $^ | grep -v '($(TRANS))' | grep -v '^: ' > $@
+
+passage.dia: references.txt Makefile
+	diatheke -b $(TRANS) -f html -k "$(REF)" > $@
 
 # --- Other stuff
 
