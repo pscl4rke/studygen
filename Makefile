@@ -2,6 +2,7 @@
 # Testing...
 SHELL := /bin/bash
 
+TRANS := NIV
 REF := $(shell tail -1 references.txt)
 
 stats: passage.pdf
@@ -20,7 +21,7 @@ passage.html: head.html passage.body foot.html
 	cat $^ | sed "s/TITLE/$(REF)/" | ./cleanup > $@
 
 passage.body: references.txt Makefile
-	diatheke -b NIV -f html -k "$(REF)" | grep -v '(NIV)' | grep -v '^: ' > $@
+	diatheke -b $(TRANS) -f html -k "$(REF)" | grep -v '($(TRANS))' | grep -v '^: ' > $@
 
 # --- Other stuff
 
