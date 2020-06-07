@@ -3,7 +3,7 @@
 SHELL := /bin/bash
 
 TRANS := NIV
-REF := $(shell tail -1 references.txt)
+REF := $(shell grep -v \^\# references.txt | tail -1)
 
 stats: passage.pdf
 	@echo
