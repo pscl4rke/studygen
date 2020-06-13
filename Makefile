@@ -2,7 +2,7 @@
 # Testing...
 SHELL := /bin/bash
 
-TRANS := NIV
+TRANS := NIV2011
 REF := $(shell grep -v \^\# references.txt | tail -1)
 
 stats: passage.pdf
