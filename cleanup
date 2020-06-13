@@ -6,4 +6,12 @@ for line in sys.stdin:
     sys.stdout.write(line
         .replace("LORD", "L<small>ORD</small>")
         .replace("<span >: ", "<span>")  # fix double colon from diatheke
+        # These are OSIS tags that get left in the output and need
+        # converting so something vaguely meaningful in HTML
+        .replace("<div", "<x-div")
+        .replace("<title>", "{<i>")
+        .replace("</title>", "</i>}")
+        .replace("<lb/>", "<br/>")
+        .replace("<divineName>", "<tt>")
+        .replace("</divineName>", "</tt>")
     )
