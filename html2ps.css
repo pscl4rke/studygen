@@ -9,6 +9,11 @@
     margin-right: 8cm;
 }
 
+BODY {
+    /* Times, New-Century-Schoolbook, Helvetica, Helvetica-Narrow, Palatino, Avantgarde, Bookman, and Courier */
+    font-family: Bookman;
+}
+
 H1 {
     font-size: 14pt;
     text-align: center;
@@ -19,7 +24,7 @@ H1 {
 P {
     /* line-height: 200%;  (doesn't work) */
     line-height: 2.8em;
-    font-size: 10pt;
+    font-size: 9pt;
 }
 
 
