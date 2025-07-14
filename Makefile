@@ -2,6 +2,7 @@
 # Testing...
 SHELL := /bin/bash
 
+# Run "diatheke -b system -k modulelist" for a list:
 TRANS := NIV2011
 REF := $(shell grep -v \^\# references.txt | tail -1)
 
@@ -18,7 +19,7 @@ passage.ps: passage.html html2ps.css
 	cat passage.html | sed "s/--/ \&ndash; /g" | recode -d utf8..html | html2ps -f html2ps.css > $@
 
 passage.html: head.html passage.body foot.html
-	cat $^ | sed "s/TITLE/$(REF)/" | ./cleanup > $@
+	cat $^ | sed "s/TITLE/$(REF)/;s/TRANS/$(TRANS)/" | ./cleanup > $@
 
 passage.body: passage.dia
 	cat $^ | grep -v '($(TRANS))' | grep -v '^: ' > $@
